@@ -1,0 +1,13 @@
+var numberToFix = function (value,num) {
+  return value.toFixed(num)
+}
+module.exports.numberToFix = numberToFix; 
+
+// 截取字符串
+var substring = function (value, start, end) {
+  if (value.length == 0 || value == undefined) {
+    return;
+  }
+  return value.substring(start,end);
+};
+module.exports.substring = substring;

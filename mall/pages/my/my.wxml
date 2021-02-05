@@ -1,0 +1,41 @@
+<!--pages/about/my/my.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view>
+    <nav-bar>
+      <text slot="content">我的</text>
+    </nav-bar>
+  </view>
+  <scroll-view class="bg-gray" scroll-y id="myInfo" style="height:{{myInfoHeight}}px;margin-top:18rpx">
+    <image src='https://s3.ax1x.com/2021/01/20/sW7I3j.png' mode='widthFix' class='ml-my-bg'
+      style="top:{{-navHeight-10}}px"></image>
+    <view class="padding ml-myInfo">
+      <view class="cu-avatar lg round text-center" bindtap="loginID" wx:if="{{loginStatus == false}}">
+        <text class="cuIcon-people"></text>
+      </view>
+      <view class="cu-avatar lg round text-center" style="background-image:url({{avatarUrl}})" wx:else></view>
+      <view class="ml-username" wx:if="{{loginStatus == true}}" style="z-index:999;">{{nickName}}</view>
+      <view class="ml-loginstatus" style="z-index:999;">
+        <text wx:if="{{loginStatus == false}}" bindtap="loginID">登录</text>
+        <text wx:else bindtap="loginID">退出登录</text>
+      </view>
+      <i-toast id="toast" />
+    </view>
+    <view class="bg-gray margin-top-xl" style="margin-top:100rpx;">
+      <view class="flex bg-white padding-bottom padding-top ml-layout">
+        <view class="ml-cu-item" wx:for="{{icon}}" wx:key="index" bindtap="goMyFunction" data-name="{{item.name}}">
+          <text class="cuIcon-{{item.name}} lg text-bgreen"></text>
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+      <view class="flex bg-white padding-bottom padding-top margin-top ml-layout">
+        <view class="ml-cu-item" wx:for="{{icons}}" wx:key="index" bindtap="goMyOrderFormList" data-index="{{index}}">
+          <text class="cuIcon-{{item.name}} lg text-bgreen"></text>
+          <text>{{item.text}}</text>
+        </view>
+      </view>
+      <view class="padding-top" style="width:100%;">
+        <recommend-content />
+      </view>
+    </view>
+  </scroll-view>
+</scroll-view>

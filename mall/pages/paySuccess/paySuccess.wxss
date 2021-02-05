@@ -1,0 +1,14 @@
+/* pages/paySuccess/paySuccess.wxss */
+.ml-payResult {
+  width: 100%;
+}
+
+.ml-pay-img {
+  width: 350rpx;
+  height: 250rpx;
+}
+
+.ml-pay-img image {
+  width: 100%;
+  height: 100%;
+}

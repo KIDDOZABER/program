@@ -1,0 +1,122 @@
+<!--pages/discounts/discounts.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view>
+    <nav-bar>
+      <view slot="back"><text class="cuIcon-back"></text>返回</view>
+      <text slot="content">优惠券</text>
+    </nav-bar>
+    <scroll-view scroll-x class="bg-white nav" style="margin-top:18rpx">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-red cur':''}}" wx:for="{{Tab}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">{{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view scroll-y class="bg-gray" id="tabCur" style="height:{{tabCurHeight}}px">
+    
+    <view class="cu-card article bg-gray" wx:if="{{TabCur == '0'}}">
+      <view class="cu-item shadow ml-coupon" wx:for="{{couponList}}" wx:key="{{index}}">
+        <view class="content">
+          <view class="ml-price text-cyan">
+            <view class="ml-reduce">
+              <text>￥</text>
+              <text class="ml-reduce-big">{{item.reduce}}</text>
+            </view>
+            <view class="ml-achieve">
+              <text>满{{item.achieve}}元可用</text>
+            </view>
+          </view>
+          <view class="desc">
+            <view class="text-content">
+              <view class="margin-top">
+                <text class="cu-tag bg-cyan light sm round">优惠券</text>
+                <text class="ml-type">全品类商品</text>
+              </view>
+            </view>
+            <view class="flex justify-between">
+              <view class="ml-valid-period">
+                <text>有效期至 </text>
+                <text>{{item.valid_period_time}}</text>
+              </view>
+              <view class="cu-tag bg-cyan light round">去使用</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-card article bg-gray" wx:if="{{TabCur == '1'}}">
+      <view class="cu-item shadow ml-coupon" wx:for="{{usedcouponList}}" wx:key="{{index}}">
+        <view class="content">
+          <view class="ml-price text-gray">
+            <view class="ml-reduce">
+              <text>￥</text>
+              <text class="ml-reduce-big">{{item.reduce}}</text>
+            </view>
+            <view class="ml-achieve">
+              <text>满{{item.achieve}}元可用</text>
+            </view>
+          </view>
+          <view class="desc">
+            <view class="text-content">
+              <view class="margin-top">
+                <text class="cu-tag bg-gray light sm round">优惠券</text>
+                <text class="ml-type">全品类商品</text>
+              </view>
+            </view>
+            <view class="flex justify-between">
+              <view class="ml-valid-period">
+                <text>有效期至 </text>
+                <text>{{item.valid_period_time}}</text>
+              </view>
+              <view class="cu-tag bg-gray light round">已使用</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-card article bg-gray" wx:if="{{TabCur == '2'}}">
+      <view class="cu-item shadow ml-coupon" wx:for="{{datedCouponList}}" wx:key="{{index}}">
+        <view class="content">
+          <view class="ml-price text-gray">
+            <view class="ml-reduce">
+              <text>￥</text>
+              <text class="ml-reduce-big">{{item.reduce}}</text>
+            </view>
+            <view class="ml-achieve">
+              <text>满{{item.achieve}}元可用</text>
+            </view>
+          </view>
+          <view class="desc">
+            <view class="text-content">
+              <view class="margin-top">
+                <text class="cu-tag bg-gray light sm round">优惠券</text>
+                <text class="ml-type">全品类商品</text>
+              </view>
+            </view>
+            <view class="flex justify-between">
+              <view class="ml-valid-period">
+                <text>有效期至 </text>
+                <text>{{item.valid_period_time}}</text>
+              </view>
+              <view class="cu-tag bg-gray light round">已过期</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="bg-gray" style="height:{{moneyBagHeight}}px"></view><!-- 占位 -->
+    <view class="get-bag" id="moneyBag">
+      <view class="bag-lead" bindtap="addBag">
+        <text class="cuIcon-redpacket lg"></text>
+        <text>领优惠券</text>
+      </view>
+      <view class="bag-add bg-orange">
+        <text class="cuIcon-people lg"></text>
+        <text>我的优惠券</text>
+      </view>
+    </view>
+  </scroll-view>
+</scroll-view>
+

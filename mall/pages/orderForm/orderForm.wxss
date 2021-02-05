@@ -1,0 +1,72 @@
+/* pages/orderForm/orderForm.wxss */
+.ml-order-site {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #fff;
+  padding: 20rpx 32rpx;
+  z-index: 999;
+  box-shadow: 0 5rpx 10rpx #ccc;
+}
+.ml-order-site .cuIcon-right {
+  position: absolute;
+  font-weight: bold;
+  font-size: 30rpx;
+  right: 20rpx;
+  top: 45%;
+  color: #999;
+}
+.ml-order-border {
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+.ml-order-img {
+  width: 200rpx;
+  height: 200rpx;
+  flex-shrink: 0;
+}
+.ml-order-img image {
+  width: 100%;
+  height: 100%;
+}
+.ml-order-brieftitle {
+  width: 440rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ml-order-brief {
+  font-size: 12px;
+  color: #999;
+}
+.ml-order-op {
+  box-shadow: 0 -5rpx 10rpx #ccc;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 优惠卷 */
+.ml-choose-coupon {
+  width: 100%;
+  height: 50%;
+  border-radius: 20rpx;
+  position: fixed;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 -5rpx 10rpx 10rpx rgba(139, 139, 139, 0.1);
+}
+.ml-coupon-list {
+  padding-top: 40rpx;
+  padding-bottom: 50rpx;
+  padding-left: 50rpx;
+  box-shadow: 0 5rpx 10rpx 10rpx rgba(139, 139, 139, 0.1);
+}
+.ml-reduce-big {
+  font-size: 64rpx;
+}
+.ml-valid-period {
+  font-size: 24rpx;
+  margin-left: 50rpx;
+}

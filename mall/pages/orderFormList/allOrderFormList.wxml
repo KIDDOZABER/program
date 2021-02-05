@@ -1,0 +1,85 @@
+<!--pages/orderFormList/allOrderFormList.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view>
+    <nav-bar>
+      <view slot="back"><text class="cuIcon-back"></text>返回</view>
+      <text slot="content">我的订单</text>
+    </nav-bar>
+    <scroll-view scroll-x class="bg-white nav" style="margin-top:18rpx">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-red cur':''}}" wx:for="{{Tab}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">{{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <scroll-view scroll-y class="bg-gray" id="tabCur" style="height:{{tabCurHeight}}px">
+    
+    <view class="cu-card article bg-gray" wx:if="{{TabCur == '0'}}">
+      <view class="cu-item shadow ml-coupon" wx:for="{{payOrdersList}}" wx:key="{{index}}">
+        <view class="title flex justify-between ">
+          <view class="text-cut">商品信息</view>
+          <view class="text-status">{{item.status}}</view>
+        </view>
+        <view class="content" wx:for="{{item.childern}}" bindtap="gotoInfo" data-id="{{item.good_id}}">
+          <image src="{{item.img}}" class="img" mode="aspectFill"></image>
+          <view class="desc ml-desc">
+            <view class="text-content ml-text-content">
+              <view><text class="ml-type">{{item.good_name}}</text></view>
+            </view>
+            <view class="paymoney">
+              <view>
+                <text>付款 </text>
+                <text class="paymoney-price">￥{{item.money}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="ml-number">x{{item.num}}</view>
+        </view>
+        <view class="ml-operation">
+          <view class="cu-tag bg-red light round" bindtap="buyAgain" data-item="{{item}}">去支付</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-card article bg-gray" wx:if="{{TabCur == '1'}}">
+      <view class="cu-item shadow ml-coupon" wx:for="{{takeOrdersList}}" wx:key="{{index}}">
+        
+      </view>
+    </view>
+
+    <view class="cu-card article bg-gray" wx:if="{{TabCur == '2'}}">
+      <view class="cu-item shadow ml-coupon" wx:for="{{refOrdersList}}" wx:key="{{index}}">
+        
+      </view>
+    </view>
+
+    <view class="cu-card article bg-gray" wx:if="{{TabCur == '3'}}">
+      <view class="cu-item shadow ml-coupon" wx:for="{{allOrdersList}}" wx:key="{{index}}">
+        <view class="title flex justify-between ">
+          <view class="text-cut">商品信息</view>
+          <view class="text-status">{{item.status}}</view>
+        </view>
+        <view class="content" wx:for="{{item.childern}}" bindtap="gotoInfo" data-id="{{item.good_id}}">
+          <image src="{{item.img}}" class="img" mode="aspectFill"></image>
+          <view class="desc ml-desc">
+            <view class="text-content ml-text-content">
+              <view><text class="ml-type">{{item.good_name}}</text></view>
+            </view>
+            <view class="paymoney">
+              <view>
+                <text>付款 </text>
+                <text class="paymoney-price">￥{{item.money}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="ml-number">x{{item.num}}</view>
+        </view>
+        <view class="ml-operation">
+          <view class="cu-tag bg-red light round" wx:if="{{item.status == '已付款'}}" bindtap="gotoPl">去评论</view>
+          <view class="cu-tag bg-red light round" wx:if="{{item.status == '未付款'}}" bindtap="buyAgain" data-item="{{item}}">去支付</view>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+</scroll-view>
+

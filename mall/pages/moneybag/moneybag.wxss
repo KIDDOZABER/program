@@ -1,0 +1,61 @@
+/* pages/discounts/discounts.wxss */
+.get-bag {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #fff;
+  padding: 32rpx 30rpx;
+}
+.bag-lead, .bag-add {
+  width: 48%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 14rpx 0;
+  border-radius: 35rpx;
+  box-sizing: border-box;
+}
+.bag-lead .cuIcon-weixin {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+  color: rgb(136,223,73);
+}
+.nav {
+  position: relative;
+}
+#tabCur {
+  position: relative;
+}
+
+
+.ml-coupon {
+  height: 210rpx;
+}
+.ml-price {
+  width: 30%;
+  position: relative;
+}
+.ml-reduce {
+  font-weight: bold;
+  position: absolute;
+  top: 32%;
+  left: 8%;
+}
+.ml-reduce-big {
+  font-size: 64rpx;
+}
+.ml-achieve {
+  position: absolute;
+  bottom: 10%;
+  left: 4%;
+  font-size: 22rpx;
+}
+.ml-type {
+  margin-left: 12rpx;
+  font-size: 24rpx;
+}
+.ml-valid-period {
+  font-size: 24rpx;
+  line-height: 48rpx;
+}

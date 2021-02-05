@@ -1,0 +1,21 @@
+<view class="cu-bar bg-white">
+  <view class="action sub-title">
+    <text class="text-xl text-bold text-bgreen">猜你喜欢</text>
+    <text class="bg-bgreen"></text>
+  </view>
+</view>
+<view class="flex flex-wrap bg-white ml-like-box">
+  <!-- 字符串截取 -->
+  <wxs module="str" src="../../utils/function.wxs"></wxs>
+  <view wx:for="{{likeData}}" wx:key="index" class="ml-like-item padding-bottom-xl" bindtap="gotoInfo" data-id="{{item.good_id}}">
+    <view>
+      <view class="ml-like-img">
+        <image src="{{item.img}}"></image>
+      </view>
+      <view class="flex justify-between ml-like-text padding-top-sm">
+        <text class="text-name text-black">{{str.substring(item.good_name,4)}}</text>
+        <text class="text-cut text-red">￥{{item.price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

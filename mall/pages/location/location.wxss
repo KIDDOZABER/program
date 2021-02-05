@@ -1,0 +1,50 @@
+/* pages/location/location.wxss */
+.cu-item .content {
+  padding: 20rpx;
+}
+.content .cu-tag {
+  font-size: 20rpx;
+  padding: 0 8rpx;
+  height: 36rpx;
+  margin-right: 16rpx;
+}
+.address {
+  font-size: 24rpx;
+}
+#addressInfo {
+  position: relative;
+}
+
+.userInfo {
+  font-weight: 600;
+  font-size: 28rpx;
+}
+.userInfo-phone {
+  margin-left: 12rpx;
+}
+.compile {
+  color: var(--red);
+}
+
+.add-lead {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #fff;
+  padding: 32rpx 30rpx;
+}
+.address-lead, .address-add {
+  width: 48%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 14rpx 0;
+  border-radius: 35rpx;
+  box-sizing: border-box;
+}
+.address-lead .cuIcon-weixin {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+  color: rgb(136,223,73);
+}

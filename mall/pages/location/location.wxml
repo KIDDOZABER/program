@@ -1,0 +1,34 @@
+<!--pages/location/location.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view>
+    <nav-bar>
+      <view slot="back" bindtap="delMySite"><text class="cuIcon-back"></text>返回</view>
+      <text slot="content">收货地址</text>
+    </nav-bar>
+  </view>
+  <scroll-view scroll-y class="bg-gray" id="addressInfo" style="height:{{addressInfoHeight}}px;margin-top:18rpx">
+    <view class="cu-list menu">
+      <view class="cu-item" wx:for="{{addressList}}" wx:key="index" bindtap="orderPage" data-site="{{item}}">
+        <view class="content">
+          <view class="userInfo">
+            <text class="userInfo-name">{{item.name}}</text>
+            <text class="userInfo-phone">{{item.phone}}</text>
+          </view>
+          <text wx:if="{{item.default == true}}" class="cu-tag radius line-red">默认</text>
+          <text class="text-grey address">{{item.address}}</text>
+        </view>
+        <view class="compile" catchtap="addressCompile" data-info="{{item}}" data-index="{{index}}">编辑</view>
+      </view>
+    </view>
+
+    <view style="height:{{addAddressHeight}}px"></view><!-- 占位 -->
+    <view class="add-lead" id="addAddress">
+      <view class="address-lead" bindtap="addressLead">
+        <text class="cuIcon-weixin lg"></text>
+        <text>微信导入</text>
+      </view>
+      <view class="address-add" bindtap="addressAdd">新增收货地址</view>
+    </view>
+  </scroll-view>
+</scroll-view>
+

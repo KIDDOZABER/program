@@ -1,0 +1,111 @@
+/* pages/orderFormList/allOrderFormList.wxss */
+.get-bag {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #fff;
+  padding: 32rpx 30rpx;
+}
+.bag-lead, .bag-add {
+  width: 48%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 14rpx 0;
+  border-radius: 35rpx;
+  box-sizing: border-box;
+}
+.bag-lead .cuIcon-weixin {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+  color: rgb(136,223,73);
+}
+.nav {
+  position: relative;
+}
+#tabCur {
+  position: relative;
+}
+
+
+.ml-price {
+  width: 30%;
+  position: relative;
+}
+.ml-reduce {
+  font-weight: bold;
+  position: absolute;
+  top: 32%;
+  left: 8%;
+}
+.ml-reduce-big {
+  font-size: 64rpx;
+}
+.ml-achieve {
+  position: absolute;
+  bottom: 10%;
+  left: 4%;
+  font-size: 22rpx;
+}
+.ml-type {
+  font-size: 24rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.ml-valid-period {
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+
+.cu-card.article>.cu-item {
+  padding-bottom: 0;
+}
+.cu-card.article>.cu-item view.title {
+  font-size: 28rpx;
+  font-weight: 700;
+  line-height: 70rpx;
+  padding: 0 30rpx;
+}
+.text-status {
+  font-size: 24rpx;
+  color: #999;
+  font-weight: normal;
+}
+.cu-card.article>.cu-item .content>image.img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  border-radius: 6rpx;
+}
+.cu-card.article>.cu-item .content .text-content.ml-text-content {
+  font-size: 28rpx;
+  color: #888;
+  margin: 22rpx 0;
+  height: 76rpx;
+}
+.paymoney {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 24rpx;
+}
+.paymoney-price {
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.ml-number {
+  margin: 22rpx 0;
+  line-height: 76rpx;
+  min-width: 30rpx;
+  max-width: 60rpx;
+}
+.ml-operation {
+  margin: 10rpx 30rpx;
+  border-top: 2rpx #ccc solid;
+  padding-top: 16rpx;
+  display: flex;
+  justify-content: flex-end;
+}

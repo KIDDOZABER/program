@@ -1,0 +1,26 @@
+/* pages/my/myLogin.wxss */
+.ml-myInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form .submit-login {
+  width: 100%;
+  border-radius: 32rpx;
+  font-weight: normal;
+}
+
+.other-login {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  text-align: center;
+}
+.login-weixin {
+  display: block;
+}
+.login-weixin-text {
+  font-size: 24rpx;
+  margin-top: 12rpx;
+}

@@ -1,0 +1,6 @@
+/* pages/addAddress/addAddress.wxss */
+.address-form .submit-add {
+  width: 100%;
+  border-radius: 32rpx;
+  font-weight: normal;
+}

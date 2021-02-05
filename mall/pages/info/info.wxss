@@ -1,0 +1,154 @@
+/* pages/info/info.wxss */
+/* @import '../../wxParse/wxParse.wxss'; */
+
+.ml-top-nav-wrap {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+}
+
+.ml-top-nav-back {
+  position: absolute;
+  left: 30rpx;
+  background-color: rgba(255, 255, 255);
+  font-size: 40rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+}
+
+.ml-goods-imgs .screen-swiper {
+  min-height: 600rpx;
+}
+
+.ml-goods-info {
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+.ml-coupon {
+  position: relative;
+}
+
+.ml-coupon::before {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -10rpx;
+  margin-left: -10rpx;
+  border-radius: 50%;
+}
+
+.ml-coupon::after {
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -10rpx;
+  margin-left: -10rpx;
+  border-radius: 50%;
+}
+
+.ml-choose,.ml-brief {
+  border-radius: 20rpx;
+}
+
+.ml-choose-coupon {
+  width: 100%;
+  min-height: 50%;
+  border-radius: 20rpx;
+  position: fixed;
+  z-index: 999;
+  transition: all .3s ease-in-out;
+}
+
+.ml-choose-more {
+  width: 100%;
+  min-height: 50%;
+  border-radius: 20rpx;
+  position: fixed;
+  z-index: 999;
+  transition: all .3s ease-in-out;
+}
+
+.ml-choose-more-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.ml-choose-more-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.ml-brief .cu-bar .action:first-child {
+  margin-left: 0;
+}
+
+.ml-top-nav {
+  position: fixed;
+  box-shadow: 0 5rpx 10rpx rgba(0, 0, 0, .1);
+}
+
+
+.ml-op-bar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 997;
+  box-shadow: 0 -5rpx 10rpx rgba(0, 0, 0, .1);
+}
+
+.ml-shadow {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  position: fixed;
+  top: 0;
+  z-index: 998;
+}
+
+
+/* 优惠卷 */
+.ml-coupon-list {
+  height: 210rpx;
+  box-shadow: 0 5rpx 10rpx 10rpx rgba(139, 139, 139, 0.1);
+}
+.ml-price {
+  width: 30%;
+  position: relative;
+}
+.ml-reduce {
+  font-weight: bold;
+  position: absolute;
+  top: 32%;
+  left: 8%;
+}
+.ml-reduce-big {
+  font-size: 64rpx;
+}
+.ml-achieve {
+  position: absolute;
+  bottom: 10%;
+  left: 4%;
+  font-size: 22rpx;
+}
+.ml-type {
+  margin-left: 12rpx;
+  font-size: 24rpx;
+}
+.ml-valid-period {
+  font-size: 24rpx;
+  line-height: 48rpx;
+}

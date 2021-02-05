@@ -1,0 +1,40 @@
+<!-- pages/basics/home/home.wxml -->
+<scroll-view scroll-y class="scrollPage">
+  <view>
+    <nav-bar>
+      <text slot="content">首页</text>
+    </nav-bar>
+    <view class="cu-bar search" bindtap="gotoSearch">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="搜索商品" disabled></input>
+      </view>
+    </view>
+    <scroll-view scroll-y id="homeContent" style="height:{{homeContentHeight}}px;">
+      <!-- 轮播图 -->
+      <view style="position:relative;">
+        <image src='https://s3.ax1x.com/2021/01/20/sW7I3j.png' mode='widthFix' class='ml-home-bg' style="top:{{-navHeight-50}}px"></image>
+        <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}} bg-ghostWhite" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+          <swiper-item wx:for="{{swiperList}}" wx:key="index" class="{{cardCur==index?'cur':''}}">
+            <view class="swiper-item">
+              <image src="{{item.pic}}" mode="aspectFill"></image>
+            </view>
+          </swiper-item>
+        </swiper>
+      </view>
+      <!-- 分类 -->
+      <scroll-view scroll-x class="bg-ghostWhite">
+        <view class="padding flex" enable-flex>
+          <view wx:for="{{homecClassify}}" wx:key="index" class="ml-cate"  bindtap="ClassifySkip" data-item="{{item}}">
+            <view class=" ml-cate-icon">
+              <image class="" src="{{item.url}}"></image>
+            </view>
+            <text class="text-sm">{{item.title}}</text>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 喜欢 -->
+      <recommend-content></recommend-content>
+    </scroll-view>
+  </view>
+</scroll-view>

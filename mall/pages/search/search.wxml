@@ -1,0 +1,69 @@
+<!--pages/search/search.wxml-->
+<wxs module="filter" src="../../utils/function.wxs"></wxs>
+
+<scroll-view scroll-y class="scrollPage">
+  <view>
+    <nav-bar>
+      <view slot="back"><text class="cuIcon-back"></text>返回</view>
+      <text slot="content">搜索</text>
+    </nav-bar>
+    <view class="cu-bar search">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" value="{{searchContent}}" placeholder="搜索商品" confirm-type="search" bindconfirm="search" bindinput="setSearchContent" auto-focus></input>
+      </view>
+      <view class="action text-white">
+        <!-- <text class="cuIcon-close"></text> -->
+        <text bindtap="search">搜索</text>
+      </view>
+    </view>
+    <scroll-view scroll-y class="padding-top padding-left padding-right"
+      style="height:{{searchContentHeight}}px" bindscrolltolower="scrollToBottom" hidden="{{!searchFlag}}">
+      <view wx:for="{{searchList}}" wx:key="index" class="bg-white flex margin-bottom-sm" style="width:100%;" enable-flex bindtap="gotoInfo" data-id="{{item.good_id}}">
+        <view class="bg-bgreen ml-search-img">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="justify-between ml-search-brief">
+          <view class="text-black padding-sm">
+            <text class="ml-search-name">{{item.good_name}}</text>
+          </view>
+          <view class="flex text-sm flex-wrap padding-left-sm">
+            <view wx:for="{{item.tip}}" wx:key="index" class="margin-right-sm" wx:if="{{index<3}}">{{item.value}}</view>
+          </view>
+          <view class="text-cut text-red padding-sm"
+            style="width:490rpx;box-sizing:border-box;">
+            <span>￥{{item.price[0]}}.</span>
+            <span style="font-size:20rpx">{{item.price[1]}}</span>
+          </view>
+          <view></view>
+        </view>
+      </view>
+      <view class="cu-load {{isLoad?'loading':'over'}}"></view>
+    </scroll-view>
+    <view class="bg-white" style="height:{{searchRecordHeight}}px" hidden="{{searchFlag}}" id="searchRecord">
+      <view wx:if="{{recordFlag}}">
+        <view class="cu-bar bg-white justify-start">
+          <view class="action sub-title">
+            <text class="text-xl text-bold text-bgreen">搜索历史</text>
+            <text class="bg-bgreen"></text>
+          </view>
+          <text class="cuIcon-deletefill text-gray margin-left" bindtap="clearRecord"></text>
+        </view>
+        <view class="cu-bar bg-white padding justify-start flex-wrap">
+          <text wx:for="{{recordList}}" wx:key="index" bindtap="clickHot" data-hot="{{item.name}}"
+            class="text-sm margin-left-sm margin-bottom-sm bg-gray round padding-top-xs padding-bottom-xs padding-left-sm padding-right-sm">{{item.name}}</text>
+        </view>
+      </view>
+      <view class="cu-bar bg-white">
+        <view class="action sub-title">
+          <text class="text-xl text-bold text-bgreen">热门搜索</text>
+          <text class="bg-bgreen"></text>
+        </view>
+      </view>
+      <view class="cu-bar bg-white padding justify-start flex-wrap">
+        <text wx:for="{{hotList}}" wx:key="index" bindtap="clickHot" data-hot="{{item.name}}"
+          class="text-sm margin-left-sm margin-bottom-sm bg-gray round padding-top-xs padding-bottom-xs padding-left-sm padding-right-sm">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

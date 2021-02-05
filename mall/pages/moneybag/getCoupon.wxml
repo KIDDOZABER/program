@@ -1,0 +1,41 @@
+<!--pages/moneybag/getCoupon.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view>
+    <nav-bar>
+      <view slot="back"><text class="cuIcon-back"></text>返回</view>
+      <text slot="content">领取优惠券</text>
+    </nav-bar>
+  </view>
+  <scroll-view scroll-y id="getcoupon" class="bg-gray" style="height:{{getcouponHeight}}px;margin-top:18rpx">
+    <view class="cu-card article bg-gray">
+      <view class="cu-item shadow ml-coupon" wx:for="{{getCouponList}}" wx:key="{{index}}">
+        <view class="content">
+          <view class="ml-price text-cyan">
+            <view class="ml-reduce">
+              <text>￥</text>
+              <text class="ml-reduce-big">{{item.reduce}}</text>
+            </view>
+            <view class="ml-achieve">
+              <text>满{{item.achieve}}元可用</text>
+            </view>
+          </view>
+          <view class="desc">
+            <view class="text-content">
+              <view class="margin-top">
+                <text class="cu-tag bg-cyan light sm round">优惠券</text>
+                <text class="ml-type">全品类商品</text>
+              </view>
+            </view>
+            <view class="flex justify-between">
+              <view class="ml-valid-period">
+                <text>有效期至 </text>
+                <text>{{item.valid_period_time}}</text>
+              </view>
+              <view class="cu-tag bg-cyan light round" bindtap="getCoupon" data-index="{{index}}">领取</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</scroll-view>

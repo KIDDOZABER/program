@@ -1,0 +1,121 @@
+<!-- pages/orderForm/orderForm.wxml -->
+<wxs module="str" src="../../utils/function.wxs"></wxs>
+<scroll-view scroll-y class="scrollPage">
+    <i-toast id="toast" />
+    <view>
+        <nav-bar>
+            <view slot="back">
+                <text class="cuIcon-back"></text>
+                返回
+            </view>
+            <text slot="content">确认订单</text>
+        </nav-bar>
+    </view>
+    <!-- 添加地址 -->
+    <!-- 地址不存在 -->
+    <view class="ml-order-site margin-top-sm" wx:if="{{isSite}}" bindtap="getSite">
+        <text class="cuIcon-right"></text>
+        <view class="ml-order-site-title text-bold text-xl">
+            <text class="cuIcon-add">添加地址</text>
+        </view>
+    </view>
+    <!-- 地址存在 -->
+    <view class="ml-order-site margin-top-sm" wx:if="{{!isSite}}" bindtap="getSite">
+        <text class="cuIcon-right"></text>
+        <view class="ml-order-site-title text-bold text-xl">
+            <text class="margin-right">{{siteShow.name}}</text>
+            <text>{{str.substring(siteShow.phone,0,4)}}****</text>
+        </view>
+        <view class="ml-order-site-content margin-top-sm margin-right-xl">
+            <text class="text-red margin-right-sm" wx:if="{{defaultSite}}">默认</text>
+            <text>{{siteShow.address}}</text>
+        </view>
+    </view>
+    <scroll-view scroll-y id="orderBox" style="height:{{orderHeight}}px">
+        <!-- 详细订单 -->
+        <view class="bg-ghostWhite padding-top-xl">
+            <view>
+                <view wx:for="{{orderList}}" wx:key="index" class="ml-order-border flex">
+                    <view class="flex bg-white padding-top-sm padding-bottom-lg" style="flex-grow:1;">
+                        <view class="ml-order-img margin-left-lg">
+                            <image src="{{item.sku.pic}}"></image>
+                        </view>
+                        <view class="flex flex-direction justify-between margin-right-lg margin-left-lg">
+                            <view class="ml-order-brieftitle">{{str.substring(item.good_name,4)}}</view>
+                            <text class="ml-order-brief">{{item.sku.sku}}</text>
+                            <view class="flex justify-between align-center">
+                                <text class="text-cut text-red">￥{{item.sku.price}}</text>
+                                <text class="padding-left-xs padding-right-xs">×{{item.num}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!-- 总计 -->
+            <view class="bg-white text-right padding-bottom-sm padding-top-sm padding-right-xl"
+                style="border-bottom: 1px solid #eee;">
+                <view>
+                    总计：
+                    <text class="text-red">￥{{filter.numberToFix(totalPrice,2)}}</text>
+                </view>
+            </view>
+            <!-- 不可用优惠券、红包 -->
+            <view class="bg-white text-grey text-center padding-bottom-sm padding-top-lg" wx:if="{{!isCoupons}}">
+                无优惠券、红包可用
+            </view>
+            <!-- 优惠券、红包可用 -->
+            <view class="bg-white text-grey text-center padding-bottom-sm padding-top-lg" bindtap="openChooseCouponBox"
+                data-flag="true" wx:if="{{isCoupons}}">
+                优惠券、红包可用
+                <text class="cuIcon-unfold"></text>
+            </view>
+
+        </view>
+    </scroll-view>
+    <!-- 领券 -->
+    <view class="padding-top padding-left padding-right padding-bottom-xs bg-white ml-choose-coupon"
+        style="bottom:{{chooseCouponBottom}}">
+        <view class="flex justify-end">
+            <text class="cuIcon-close" bindtap="openChooseCouponBox" data-flag="false"></text>
+        </view>
+        <view class="text-black margin-top-xl margin-bottom-sm text-center">优惠券</view>
+        <scroll-view style="height:560rpx;" scroll-y class="padding-bottom">
+            <view class="cu-card article" style=" margin-bottom:40rpx;">
+                <view class="cu-item ml-coupon-list" wx:for="{{coupons}}" wx:key="index">
+                    <view class="content flex align-center">
+                        <view class="ml-price text-bgreen">
+                            <view class="ml-reduce">
+                                <text>￥</text>
+                                <text class="ml-reduce-big">{{item.reduce}}</text>
+                            </view>
+                            <view class="ml-achieve">
+                                <text>满{{item.achieve}}元可用</text>
+                            </view>
+                        </view>
+                        <view class="desc">
+                            <view class="ml-valid-period">
+                                <text>{{item.created_time}}</text>
+                                -
+                                <text>{{item.valid_period_time}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <!-- 支付 -->
+    <wxs module="filter" src="../../utils/function.wxs"></wxs>
+    <view class="flex justify-between align-center padding bg-white ml-order-op" id="cartOp">
+        <view>
+            总计：
+            <text class="text-red">￥{{filter.numberToFix(payPrice,2)}}</text>
+            <view class="text-red" style="font-size: 12px;margin-left:50px;" wx:if="{{isCoupons}}">
+                优惠 ￥{{filter.numberToFix(reducedPrice,2)}}
+            </view>
+        </view>
+        <view class="bg-bred round padding-left-lg padding-right-lg padding-bottom-sm padding-top-sm" bindtap="result">
+            去支付
+        </view>
+    </view>
+</scroll-view>

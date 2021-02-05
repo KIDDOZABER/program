@@ -1,0 +1,7 @@
+/* pages/location/compileAddress.wxss */
+.address-form .submit-add {
+  width: 100%;
+  border-radius: 32rpx;
+  border: 1rpx solid #ccc;
+  font-weight: normal;
+}

@@ -1,0 +1,23 @@
+/* pages/basics/home/home.wxss */
+.ml-home-bg {
+  position: absolute;
+  width: 100%;
+  height: 486rpx;
+}
+
+.ml-cate {
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40rpx;
+  flex-shrink: 0;
+}
+
+.ml-cate-icon {
+  margin-bottom: 15rpx;
+}
+.ml-cate-icon image {
+  width: 80rpx;
+  height: 80rpx;
+}

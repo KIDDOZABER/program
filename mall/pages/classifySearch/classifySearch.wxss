@@ -1,0 +1,25 @@
+/* pages/search/search.wxss */
+.ml-search-img {
+  width: 250rpx;
+  height: 250rpx;
+  flex-shrink: 0;
+}
+
+.ml-search-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.ml-search-brief {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ml-search-name {
+  width: 400rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

@@ -1,0 +1,9 @@
+<view class="ml-top-nav-wrap" style="height:{{navHeight-navTop+'px'}};margin-top:{{navTop+'px'}}">
+  <view class="ml-top-nav-back" bindtap="BackPage">
+    <slot name="back"></slot>
+  </view>
+  <view>
+    <slot name="content"></slot>
+  </view>
+</view>
+<image src='https://s3.ax1x.com/2021/01/20/sW7I3j.png' mode='widthFix' class='ml-top-bg'></image>

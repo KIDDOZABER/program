@@ -1,0 +1,30 @@
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
+
+.ml-like-box {
+  width: 100%;
+  padding: 0 15rpx;
+}
+.ml-like-item {
+  width: 50%;
+  box-sizing: border-box;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+}
+.ml-like-img {
+  height: 332rpx;
+  overflow: hidden;
+}
+.ml-like-img image {
+  height: 332rpx;
+}
+.ml-like-text {
+  flex-direction: column;
+  height: 130rpx;
+}
+.ml-like-box .text-name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}

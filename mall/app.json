@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/cate/cate",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/my/myLogin",
+    "pages/search/search",
+    "pages/classifySearch/classifySearch",
+    "pages/index/index",
+    "pages/location/location",
+    "pages/location/addAddress",
+    "pages/location/compileAddress",
+    "pages/moneybag/moneybag",
+    "pages/moneybag/getCoupon",
+    "pages/info/info",
+    "pages/orderForm/orderForm",
+    "pages/orderFormList/allOrderFormList",
+    "pages/paySuccess/paySuccess"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#8799a3",
+    "selectedColor": "#14bec7",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/tabbar/tab-home.png",
+        "selectedIconPath": "images/tabbar/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "text": "分类",
+        "iconPath": "images/tabbar/tab-cate.png",
+        "selectedIconPath": "images/tabbar/tab-cate-current.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/tabbar/tab-cart.png",
+        "selectedIconPath": "images/tabbar/tab-cart-current.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/tabbar/tab-my.png",
+        "selectedIconPath": "images/tabbar/tab-my-current.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "nav-bar": "/components/navbar/index",
+    "recommend-content": "/components/recommend/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

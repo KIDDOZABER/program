@@ -1,0 +1,112 @@
+{
+	"pages": [
+		{
+			"path": "pages/welcome/welcome",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/tabBar/home/home",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/tabBar/my/my",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/shoot/shoot",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/share/share",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/likefans/likefans",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/fullscreen/fullscreen",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/edit/edit",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		// #ifdef APP-PLUS || MP-WEIXIN || H5
+		{
+			"path": "pages/component/editor/editor",
+			"style": {
+				"navigationBarTitleText": "editor",
+				"app-plus": {
+					"softinputMode": "adjustResize"
+				}
+			}
+		}
+		// #endif
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "melody",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"scrollIndicator": "none",
+		"app-plus": {
+			"background": "#efeff4",
+			"scrollIndicator": "none"
+		}
+	},
+	"tabBar": {
+		"color": "#bfbfbf",
+		"selectedColor": "#A1DCC1",
+		"borderStyle": "black",
+		"backgroundColor": "#FFFFFF",
+		// #ifdef APP-PLUS
+		"midButton": {
+			"iconPath": "static/cameras.png",
+			"iconWidth": "48px"
+		},
+		// #endif
+		"list": [{
+				"pagePath": "pages/tabBar/home/home",
+				"iconPath": "static/home.png",
+				"selectedIconPath": "static/home_selected.png"
+				// "text": "HOME"
+			},
+			{
+				"pagePath": "pages/tabBar/my/my",
+				"iconPath": "static/my.png",
+				"selectedIconPath": "static/my_selected.png"
+				// "text": "MY"
+			}
+		]
+	}
+}
